@@ -1,0 +1,3 @@
+/home/stepan/Desktop/console_graphic/build/CMakeFiles/terminal_3d.dir
+/home/stepan/Desktop/console_graphic/build/CMakeFiles/edit_cache.dir
+/home/stepan/Desktop/console_graphic/build/CMakeFiles/rebuild_cache.dir

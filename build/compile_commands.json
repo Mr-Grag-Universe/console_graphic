@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/stepan/Desktop/console_graphic/build",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/terminal_3d.dir/main.cpp.o -c /home/stepan/Desktop/console_graphic/main.cpp",
+  "file": "/home/stepan/Desktop/console_graphic/main.cpp",
+  "output": "CMakeFiles/terminal_3d.dir/main.cpp.o"
+}
+]

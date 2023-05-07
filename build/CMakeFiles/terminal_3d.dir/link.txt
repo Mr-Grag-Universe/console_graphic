@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/terminal_3d.dir/main.cpp.o -o terminal_3d 
