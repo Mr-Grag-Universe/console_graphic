@@ -8,6 +8,8 @@
 #include "atrib.h"
 #include "Point.h"
 #include "Triangle.h"
+#include "Polyhedron.h"
+#include "ClosedPolygon.h"
 
 #define home()              printf(ESC "[H")
 #define clrscr()            printf(ESC "[2J")
@@ -25,5 +27,18 @@ int main() {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 	
+    Triangle t = {{0,0,0}, {1,0,0}, {0,1,0}};
+    std::cout << t.S() << std::endl;
+
+    Polyhedron p = {t};
+    p.add_face({{1,0,0}, {0,0,1}, {0,0,0}});
+    p.add_face({{0,1,0}, {0,0,1}, {0,0,0}});
+    p.add_face({{1,0,0}, {0,0,1}, {0,1,0}});
+    try {
+        ClosedPolygon cp(p);
+    } catch (std::string s) {
+        std::cout << s << std::endl;
+    }
+
 	return 0;
 }

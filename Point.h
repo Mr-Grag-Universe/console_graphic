@@ -5,8 +5,9 @@
 
 class Point {
 public:
-    double x, y, z;
+    double x{}, y{}, z{};
 
+    Point() {}
     Point(double x, double y, double z) : x(x), y(y), z(z) {}
     Point(std::initializer_list<double> l) {
         x = l.begin()[0];
@@ -50,6 +51,10 @@ public:
         return P;
     }
 
+    Point operator/(double a) {
+        return *this * (1/a);
+    }
+
     Point operator^(const Point & p) const {
         return Point(y*p.z - p.y*z, -x*p.z + p.x*z, x*p.y - y*p.x);
     }
@@ -65,6 +70,13 @@ public:
     }
     double tan(const Point & p) const {
         return std::tan(std::acos(p*(*this) / (this->r() * p.r())));
+    }
+
+    bool operator==(const Point & p) const {
+        return (x == p.x) && (y == p.y) && (z == p.z);
+    }
+    bool operator<(const Point & p) const {
+        return (x < p.x) && (y < p.y) && (z < p.z);
     }
 };
 
