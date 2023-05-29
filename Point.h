@@ -94,6 +94,32 @@ public:
         }
         return (z < p.z);
     }
+
+    Point orto_r() const {
+        if (x*y*z)
+            return {1/x, -1/y, 0};
+
+        if (x == 0 && y == 0 && z == 0)
+            return {1, 0, 0};
+
+        if (x) {
+            if (y) {
+                return {1/x, -1/y, 0};
+            } else if (z) {
+                return {1/x, 0, -1/z};
+            } else {
+                return {0, 1, 1};
+            }
+        } else if (y) {
+            if (z) {
+                return {1, -1/y, 1/z};
+            } else {
+                return {1, 0, 1};
+            }
+        } else {
+            return {1, 1, 0};
+        }
+    }
 };
 
 #include <memory>

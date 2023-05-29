@@ -288,6 +288,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /home/stepan/Desktop/console_graphic/Object.h \
   /home/stepan/Desktop/console_graphic/Scene.h \
   /home/stepan/Desktop/console_graphic/Light.h \
+  /home/stepan/Desktop/console_graphic/Camera.h \
+  /home/stepan/Desktop/console_graphic/my_math.h \
   /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h \
   /home/stepan/Desktop/console_graphic/Point.h \
   /home/stepan/Desktop/console_graphic/Light.h \
@@ -296,6 +298,10 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 
 /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h:
+
+/home/stepan/Desktop/console_graphic/my_math.h:
+
+/home/stepan/Desktop/console_graphic/Camera.h:
 
 /home/stepan/Desktop/console_graphic/Object.h:
 

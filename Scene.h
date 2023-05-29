@@ -10,6 +10,7 @@
 #include "Camera.h"
 #include "light_srcs/LPoint.h"
 #include "objects/Tetraider.h"
+#include "my_math.h"
 
 
 class Scene {
@@ -23,7 +24,8 @@ public:
     /// @param ind - camera for working with
     /// @return matrix of light intensity for rendering 
     std::vector <std::vector<double>> take_look(size_t ind=0) const {
-        Camera::Resolution resolution = cameras[ind]->resolution;
+        Camera & camera = *(cameras[ind]);
+        Camera::Resolution resolution = camera.resolution;
         std::vector <std::vector<double>> picture(resolution.y);
 
         for (size_t i = 0; i < picture.size(); ++i) {
@@ -31,9 +33,23 @@ public:
             line = std::vector<double>(resolution.x);
             for (size_t j = 0; j < line.size(); ++j) {
                 double & pixel = line[j];
+                Point point = camera.pixel_point(i, j);
 
                 // process certain pixel
-                
+                // пока тактика такая:
+                // 1) узнаём, принадлежит ли основание высоты на все плоскости к треугильнику, задающему эту плоскость
+                //    на основании чего делаем вывод, какие треугольника рассматриваем
+                // 2) считаем кол-во треугольников с + и - косинусом векторов
+                //      * приоритет в рамках одной фигуры отдаём ближайшей грани
+                // 3) берём среднее от самой многочисленной группы
+
+                std::vector<double> l = {};
+                for (auto & o : objects) {
+                    double m = -1;
+                    for (auto & f : o->get_faces()) {
+                        if (f.)
+                    }
+                }
             }
         }
         return picture;

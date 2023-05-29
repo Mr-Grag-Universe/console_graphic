@@ -18,6 +18,26 @@
 class Triangle {
     std::array <point_ptr, 3> v;
     std::map <std::pair<int, int>, Section> e; // edges
+
+    #define EPS 1e-10
+
+    static double triangle_square(double a,double b, double c) {
+        double p=(a+b+c)/2;
+        return sqrt(p*(p-a)*(p-b)*(p-c));
+    }
+    static bool inside_triangle(double P_x,double P_y, double P_z, double A_x, double A_y, double A_z, double B_x, double B_y, double B_z, double C_x, double C_y, double C_z){
+        int inside=0;
+        double AB=sqrt( (A_x-B_x)*(A_x-B_x) + (A_y-B_y)*(A_y-B_y) + (A_z-B_z)*(A_z-B_z) );
+        double BC=sqrt( (B_x-C_x)*(B_x-C_x) + (B_y-C_y)*(B_y-C_y) + (B_z-C_z)*(B_z-C_z) );
+        double CA=sqrt( (A_x-C_x)*(A_x-C_x) + (A_y-C_y)*(A_y-C_y) + (A_z-C_z)*(A_z-C_z) );
+
+        double AP=sqrt( (P_x-A_x)*(P_x-A_x) + (P_y-A_y)*(P_y-A_y) + (P_z-A_z)*(P_z-A_z) );
+        double BP=sqrt( (P_x-B_x)*(P_x-B_x) + (P_y-B_y)*(P_y-B_y) + (P_z-B_z)*(P_z-B_z) );
+        double CP=sqrt( (P_x-C_x)*(P_x-C_x) + (P_y-C_y)*(P_y-C_y) + (P_z-C_z)*(P_z-C_z) );
+        double diff=(triangle_square(AP,BP,AB)+triangle_square(AP,CP,CA)+triangle_square(BP,CP,BC))-triangle_square(AB,BC,CA);
+                if (fabs(diff)<EPS) inside=1;
+        return inside;
+    }
 public:
     Triangle(std::array <point_ptr, 3> p) : v(p) {
         e[std::make_pair(0, 2)] = Section(p[0], p[2]);
@@ -94,6 +114,32 @@ public:
         double del = std::sqrt(n.x*n.x + n.y*n.y + n.z*n.z);
         return num/del;
     }
+
+    bool belong_to_plane(Point p) const {
+        Point n = this->normal();
+        double d = -(n.x*(*(v[0])).x + n.y*(*(v[0])).y + n.z*(*(v[0])).z);
+        return (p.x*n.x + p.y*n.y + p.z*n.z + d) == 0;
+    }
+
+    Point projection(Point p) const {
+        double d = this->distance({p.x, p.y, p.z});
+        Point n = this->normal();
+        Point p1{p + n}, p2{p - n};
+        if (this->belong_to_plane(p1))
+            return p1;
+        return p2;
+    }
+
+    bool on_triangle(Point p) const {
+        return inside_triangle(v[0]->x, v[0]->y, v[0]->z, v[1]->x, v[1]->y, v[1]->z, v[2]->x, v[2]->y, v[2]->z, p.x, p.y, p.z);
+    }
+
+    bool projection_on_triangle(Point p) const {
+        p = this->projection(p);
+        return this->on_triangle(p);
+    }
+
+    
 
     // ================= getters ================ //
     std::vector <point_ptr> get_v() const {

@@ -40,6 +40,10 @@ public:
 
     Object(ClosedPolyhedron & cp) : ClosedPolyhedron(cp) {}
     Object(ClosedPolyhedron && cp) : ClosedPolyhedron(cp) {}
+
+    virtual std::set<Triangle> get_faces() {
+        return f;
+    }
 };
 
 #endif // OBJECT_CLASS_H
