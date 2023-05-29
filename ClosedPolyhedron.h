@@ -1,11 +1,13 @@
 #ifndef CLOSED_POLYHEDRON_CLASS_H
 #define CLOSED_POLYHEDRON_CLASS_H
 
+#include <iostream>
+
 #include "Polyhedron.h"
 #include "Section.h"
 #include <string>
 
-class ClosedPolyhedron : Polyhedron {
+class ClosedPolyhedron : public Polyhedron {
 private:
 public:
 
@@ -17,6 +19,11 @@ public:
         } else {
             throw std::string("this is not closed polyhedron");
         }
+    }
+
+    virtual double volume() const {
+        std::cout << "sorry, but we cannot do this yet" << std::endl;
+        return 1;
     }
 };
 

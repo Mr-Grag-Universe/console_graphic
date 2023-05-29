@@ -11,6 +11,8 @@
 #include "Triangle.h"
 #include "Polyhedron.h"
 #include "ClosedPolyhedron.h"
+#include "Object.h"
+#include "Scene.h"
 
 #define home()              printf(ESC "[H")
 #define clrscr()            printf(ESC "[2J")
@@ -55,6 +57,14 @@ int main() {
     } catch (std::string s) {
         std::cout << s << std::endl;
     }
+
+    try {
+        Object o = Object::CreateDefault();
+    } catch (...) {
+        std::cout << "something came wrong" << std::endl;
+    }
+
+    Scene s = Scene();
 
 	return 0;
 }

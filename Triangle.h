@@ -81,9 +81,18 @@ public:
         return {x, y, z};
     }
 
-    Point normal() {
+    Point normal() const {
         Point p = (*(v[0])-*(v[1])) ^ (*(v[0])-*(v[2]));
         return (p / p.r()) * (p.cos(*(v[0])) >= 0 ? 1 : -1); // нормаль направлена от начала координат
+    }
+
+    double distance(Point && p) const {
+        // normal vector
+        Point n = this->normal();
+        double d = -(n.x*(*(v[0])).x + n.y*(*(v[0])).y + n.z*(*(v[0])).z);
+        double num = std::abs(n.x*p.x + n.y*p.y + n.z*p.z + d);
+        double del = std::sqrt(n.x*n.x + n.y*n.y + n.z*n.z);
+        return num/del;
     }
 
     // ================= getters ================ //

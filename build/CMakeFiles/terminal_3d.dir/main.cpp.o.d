@@ -227,4 +227,12 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_deque.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/deque.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_stack.h \
-  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h
+  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h \
+  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Scene.h \
+  /home/stepan/Desktop/console_graphic/Light.h \
+  /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h \
+  /home/stepan/Desktop/console_graphic/light_srcs/../Point.h \
+  /home/stepan/Desktop/console_graphic/light_srcs/../Light.h \
+  /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
+  /home/stepan/Desktop/console_graphic/objects/../Object.h

@@ -286,4 +286,12 @@ CMakeFiles/terminal_3d.dir/main.cpp.o
  /usr/include/c++/13.1.1/bits/deque.tcc
  /usr/include/c++/13.1.1/bits/stl_stack.h
  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h
+ /home/stepan/Desktop/console_graphic/Object.h
+ /home/stepan/Desktop/console_graphic/Scene.h
+ /home/stepan/Desktop/console_graphic/Light.h
+ /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h
+ /home/stepan/Desktop/console_graphic/Point.h
+ /home/stepan/Desktop/console_graphic/Light.h
+ /home/stepan/Desktop/console_graphic/objects/Tetraider.h
+ /home/stepan/Desktop/console_graphic/Object.h
 

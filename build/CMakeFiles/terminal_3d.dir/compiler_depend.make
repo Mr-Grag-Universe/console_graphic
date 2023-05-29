@@ -284,8 +284,20 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/include/c++/13.1.1/bits/stl_deque.h \
   /usr/include/c++/13.1.1/bits/deque.tcc \
   /usr/include/c++/13.1.1/bits/stl_stack.h \
-  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h
+  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h \
+  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Scene.h \
+  /home/stepan/Desktop/console_graphic/Light.h \
+  /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h \
+  /home/stepan/Desktop/console_graphic/Point.h \
+  /home/stepan/Desktop/console_graphic/Light.h \
+  /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
+  /home/stepan/Desktop/console_graphic/Object.h
 
+
+/home/stepan/Desktop/console_graphic/light_srcs/LPoint.h:
+
+/home/stepan/Desktop/console_graphic/Object.h:
 
 /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h:
 
@@ -412,6 +424,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/types/struct_timeval.h:
+
+/home/stepan/Desktop/console_graphic/objects/Tetraider.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
@@ -683,6 +697,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/linux/errno.h:
 
+/home/stepan/Desktop/console_graphic/Light.h:
+
 /usr/include/c++/13.1.1/bits/functexcept.h:
 
 /usr/include/asm-generic/errno.h:
@@ -694,6 +710,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/bits/charconv.h:
 
 /usr/include/c++/13.1.1/bits/functional_hash.h:
+
+/home/stepan/Desktop/console_graphic/Scene.h:
 
 /usr/include/c++/13.1.1/bits/hash_bytes.h:
 
