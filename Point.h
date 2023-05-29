@@ -1,7 +1,9 @@
 #ifndef POINT_CLASS_H
 #define POINT_CLASS_H
 
+#include <iostream>
 #include <cmath>
+#include <ostream>
 
 class Point {
 public:
@@ -93,6 +95,10 @@ public:
             return false;
         }
         return (z < p.z);
+    }
+
+    friend std::ostream& operator<<(std::ostream &os, const Point& p) {
+        return os << "(" << p.x << ", " << p.y << ", " << p.z << ")";
     }
 
     Point orto_r() const {

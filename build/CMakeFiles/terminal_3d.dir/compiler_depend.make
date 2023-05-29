@@ -180,6 +180,19 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/include/c++/13.1.1/bits/ostream.tcc \
   /usr/include/c++/13.1.1/istream \
   /usr/include/c++/13.1.1/bits/istream.tcc \
+  /usr/include/c++/13.1.1/iomanip \
+  /usr/include/c++/13.1.1/locale \
+  /usr/include/c++/13.1.1/bits/locale_facets_nonio.h \
+  /usr/include/c++/13.1.1/ctime \
+  /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+  /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13.1.1/bits/codecvt.h \
+  /usr/include/c++/13.1.1/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13.1.1/bits/locale_conv.h \
+  /usr/include/c++/13.1.1/bits/quoted_string.h \
+  /usr/include/c++/13.1.1/sstream \
+  /usr/include/c++/13.1.1/bits/sstream.tcc \
   /usr/include/sys/stat.h \
   /usr/include/bits/stat.h \
   /usr/include/bits/struct_stat.h \
@@ -294,7 +307,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /home/stepan/Desktop/console_graphic/Point.h \
   /home/stepan/Desktop/console_graphic/Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
-  /home/stepan/Desktop/console_graphic/Object.h
+  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Render.h
 
 
 /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h:
@@ -345,6 +359,20 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/set:
 
+/usr/include/c++/13.1.1/array:
+
+/home/stepan/Desktop/console_graphic/Triangle.h:
+
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/bits/flt-eval-method.h:
+
+/usr/include/math.h:
+
 /usr/include/c++/13.1.1/ext/string_conversions.h:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
@@ -367,29 +395,31 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/lib/clang/15.0.7/include/stdint.h:
 
-/usr/include/c++/13.1.1/bits/invoke.h:
-
 /usr/include/c++/13.1.1/string:
 
 /usr/include/c++/13.1.1/backward/binders.h:
+
+/usr/include/bits/iscanonical.h:
+
+/usr/include/c++/13.1.1/bits/ptr_traits.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/c++/13.1.1/bits/ios_base.h:
 
 /usr/include/unistd.h:
 
 /usr/include/c++/13.1.1/bits/stl_function.h:
 
-/usr/include/c++/13.1.1/bits/ptr_traits.h:
+/usr/include/c++/13.1.1/compare:
 
-/usr/include/bits/iscanonical.h:
+/usr/include/c++/13.1.1/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
 /usr/include/c++/13.1.1/bits/postypes.h:
 
 /usr/include/c++/13.1.1/bits/new_allocator.h:
-
-/usr/include/c++/13.1.1/bits/ios_base.h:
-
-/usr/include/bits/math-vector.h:
 
 /usr/include/sys/single_threaded.h:
 
@@ -427,8 +457,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/ioctls.h:
 
-/usr/include/bits/mathcalls.h:
-
 /usr/include/bits/types/struct_timeval.h:
 
 /home/stepan/Desktop/console_graphic/objects/Tetraider.h:
@@ -463,8 +491,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/select.h:
 
-/usr/include/bits/endianness.h:
-
 /usr/include/bits/libc-header-start.h:
 
 /home/stepan/Desktop/console_graphic/Point.h:
@@ -492,6 +518,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/types/mbstate_t.h:
 
 /usr/include/bits/types/__locale_t.h:
+
+/usr/include/c++/13.1.1/ctime:
 
 /usr/include/c++/13.1.1/bits/allocator.h:
 
@@ -547,13 +575,9 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/stdint-uintn.h:
 
-/usr/include/c++/13.1.1/array:
-
 /usr/include/bits/types/__sigset_t.h:
 
 /usr/include/c++/13.1.1/cmath:
-
-/home/stepan/Desktop/console_graphic/Triangle.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -566,8 +590,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/lib/clang/15.0.7/include/stdarg.h:
 
 /usr/include/c++/13.1.1/iostream:
-
-/usr/include/bits/flt-eval-method.h:
 
 /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
@@ -601,15 +623,17 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/types/__FILE.h:
 
-/usr/include/sys/cdefs.h:
-
-/usr/include/c++/13.1.1/bits/unique_ptr.h:
-
 /usr/include/c++/13.1.1/exception:
 
 /usr/include/bits/timex.h:
 
 /usr/include/bits/errno.h:
+
+/usr/include/bits/fp-fast.h:
+
+/usr/include/sched.h:
+
+/usr/include/wctype.h:
 
 /usr/include/bits/setjmp.h:
 
@@ -661,10 +685,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/stdlib-float.h:
 
-/usr/include/c++/13.1.1/cstdlib:
-
-/usr/include/stdlib.h:
-
 /usr/include/bits/types/clockid_t.h:
 
 /usr/include/bits/stdint-intn.h:
@@ -676,6 +696,12 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/cerrno:
 
 /usr/include/sys/select.h:
+
+/usr/include/c++/13.1.1/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/c++/13.1.1/iomanip:
 
 /usr/include/bits/types/sigset_t.h:
 
@@ -697,17 +723,13 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/types/__fpos64_t.h:
 
+/usr/include/c++/13.1.1/sstream:
+
 /usr/include/sys/stat.h:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/linux/errno.h:
-
-/home/stepan/Desktop/console_graphic/Light.h:
-
-/usr/include/c++/13.1.1/bits/functexcept.h:
-
-/usr/include/asm-generic/errno.h:
 
 /usr/include/bits/types/error_t.h:
 
@@ -724,12 +746,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/bits/basic_string.tcc:
 
 /usr/include/c++/13.1.1/system_error:
-
-/usr/include/sched.h:
-
-/usr/include/wctype.h:
-
-/usr/include/bits/fp-fast.h:
 
 /usr/include/features-time64.h:
 
@@ -753,6 +769,12 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/ostream.tcc:
 
+/usr/include/sys/cdefs.h:
+
+/usr/include/c++/13.1.1/bits/unique_ptr.h:
+
+/usr/include/c++/13.1.1/bits/locale_facets_nonio.h:
+
 /usr/include/c++/13.1.1/istream:
 
 /usr/include/c++/13.1.1/bits/istream.tcc:
@@ -761,13 +783,43 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/asm/ioctls.h:
 
-/usr/include/bits/stat.h:
+/usr/include/c++/13.1.1/bits/invoke.h:
+
+/usr/include/c++/13.1.1/locale:
+
+/usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
+
+/usr/include/bits/endianness.h:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/13.1.1/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13.1.1/bits/locale_conv.h:
+
+/usr/include/sys/ioctl.h:
+
+/usr/include/c++/13.1.1/bits/codecvt.h:
+
+/home/stepan/Desktop/console_graphic/Light.h:
+
+/usr/include/c++/13.1.1/bits/functexcept.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/c++/13.1.1/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/13.1.1/bits/quoted_string.h:
+
+/usr/include/c++/13.1.1/bits/sstream.tcc:
 
 /usr/include/linux/types.h:
 
 /usr/include/bits/fp-logb.h:
 
 /usr/include/linux/ioctl.h:
+
+/usr/include/bits/stat.h:
 
 /usr/include/asm/types.h:
 
@@ -788,10 +840,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/types/struct_statx_timestamp.h:
 
 /usr/include/bits/types/struct_statx.h:
-
-/usr/include/c++/13.1.1/bits/cxxabi_init_exception.h:
-
-/usr/include/sys/ioctl.h:
 
 /usr/include/asm-generic/ioctls.h:
 
@@ -837,8 +885,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/tuple:
 
-/usr/include/bits/mathcalls-helper-functions.h:
-
 /usr/include/c++/13.1.1/bits/cxxabi_forced.h:
 
 /usr/include/c++/13.1.1/bits/shared_ptr.h:
@@ -846,6 +892,10 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/byteswap.h:
 
 /usr/include/c++/13.1.1/bits/shared_ptr_base.h:
+
+/home/stepan/Desktop/console_graphic/Render.h:
+
+/usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
 
 /usr/include/c++/13.1.1/bits/allocated_ptr.h:
 
@@ -859,22 +909,14 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/shared_ptr_atomic.h:
 
-/usr/include/bits/mathcalls-narrow.h:
-
 /usr/lib/clang/15.0.7/include/sanitizer/tsan_interface.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/13.1.1/backward/auto_ptr.h:
 
 /usr/include/linux/falloc.h:
 
 /usr/include/bits/unistd_ext.h:
 
 /home/stepan/Desktop/console_graphic/atrib.h:
-
-/usr/include/math.h:
-
-/usr/include/c++/13.1.1/backward/auto_ptr.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/13.1.1/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/13.1.1/compare:

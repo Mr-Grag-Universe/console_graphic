@@ -41,6 +41,11 @@ public:
 
         std::array<double, 3> line3 = {sin_1*sin_3-sin_2*cos_1*cos_3, sin_1*cos_3+sin_2*sin_3*cos_1, cos_1*cos_2};
 
+        cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
+        cos_1 = position.x/(position.r()*cos_3);
+        sin_3 = std::sin(std::acos(cos_3));
+        sin_1 = std::sin(std::acos(cos_1));
+
         std::array<std::array<double, 3>, 3> M = {
             line1,
             line2,
@@ -48,11 +53,42 @@ public:
         };
         // пока что у нас камера смотрит вдоль оси y
         // надо использовать матрицы вращения для определения и углы, выведенные из вектора нормали
-        Point p = Point({size.x*i/resolution.x, 0, size.y*j/resolution.y});
-        std::array<double, 3> line = M_x(M, {p.x, p.y, p.z});
+        int x = (int)j-(int)resolution.x/2;
+        int y = (int)i-(int)resolution.y/2;
+        Point p = Point({size.x * (double)x/(double)resolution.x, 0, size.y*(double)y/(double)resolution.y});
+        p = Point({0, position.r(), 0}) + p;
+        line1 = {   1,    0,      0       };
+        line2 = {   0,    cos_3,  -sin_3  };
+        line3 = {   0,    sin_3,  cos_3   };
+        std::array<std::array<double, 3>, 3> M1 = {
+            line1,
+            line2,
+            line3
+        };
+        line1 = {cos_1, -sin_1, 0};
+        line2 = {sin_1, cos_1, 0};
+        line3 = {0, 0, 1};
+        std::array<std::array<double, 3>, 3> M2 = {
+            line1,
+            line2,
+            line3
+        };
+        std::array<double, 3> line = M_x(M1, {p.x, p.y, p.z});
+        line = M_x(M2, line);
         p = {line[0], line[1], line[2]};
 
-        return position + p;
+        return p;
+    }
+
+    std::vector<std::vector<Point>> grid() const {
+        std::vector<std::vector<Point>> g(size.y);
+        for (size_t i = 0; i < size.y; ++i) {
+            g[i] = std::vector<Point>(size.x);
+            for (size_t j = 0; j < size.x; ++j) {
+                g[i][j] = this->pixel_point(i, j);
+            }
+        }
+        return g;
     }
 };
 

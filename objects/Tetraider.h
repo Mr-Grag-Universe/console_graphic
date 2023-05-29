@@ -18,7 +18,7 @@ public:
             }
         }
 
-        return t.S()*t.distance(std::move(point))/2;
+        return t.S()*t.distance(point)/2;
     }
 };
 

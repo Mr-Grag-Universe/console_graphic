@@ -7,9 +7,9 @@
 template <size_t n>
 std::array<double, n> M_x(std::array<std::array<double, n>, n> M, std::array<double, n> x) {
     std::array<double, n> res;
-    for (for j = 0; j < n; ++j) {
+    for (size_t j = 0; j < n; ++j) {
         res[j] = 0;
-        for (for size_t i = 0; i < n; ++i) {
+        for (size_t i = 0; i < n; ++i) {
             res[j] += M[j][i]*x[i];
         }
     }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -13,6 +14,7 @@
 #include "ClosedPolyhedron.h"
 #include "Object.h"
 #include "Scene.h"
+#include "Render.h"
 
 #define home()              printf(ESC "[H")
 #define clrscr()            printf(ESC "[2J")
@@ -65,6 +67,20 @@ int main() {
     }
 
     Scene s = Scene();
+    auto M = s.take_look();
+    for (auto & line : M) {
+        for (auto & el : line) {
+            std::cout << std::setw(7) << std::left << std::fixed << std::setprecision(3)<< el << " | ";
+        }
+        std::cout << std::endl;
+    }
+    auto m = render(M);
+    for (auto & line : m) {
+        for (auto & el : line) {
+            std::cout << /*std::setw(7) << std::left << std::fixed << std::setprecision(3)<< */ el << " ";
+        }
+        std::cout << std::endl;
+    }
 
 	return 0;
 }

@@ -88,6 +88,12 @@ public:
         return (std::abs(((*(v[0])-*(v[2])) ^ (*(v[1])-*(v[2]))).r()) / 2);
     }
 
+    std::array<double, 4> coeffs() const {
+        Point n = this->normal();
+        double d = -(n.x*(*(v[0])).x + n.y*(*(v[0])).y + n.z*(*(v[0])).z);
+        return {n.x, n.y, n.z, d};
+    }
+
     Point center() const {
         double x{}, y{}, z{};
         for (auto & v : v) {
@@ -114,6 +120,15 @@ public:
         double del = std::sqrt(n.x*n.x + n.y*n.y + n.z*n.z);
         return num/del;
     }
+    double distance(Point p) const {
+        // normal vector
+        Point n = this->normal();
+        double d = -(n.x*(*(v[0])).x + n.y*(*(v[0])).y + n.z*(*(v[0])).z);
+        double num = std::abs(n.x*p.x + n.y*p.y + n.z*p.z + d);
+        double del = std::sqrt(n.x*n.x + n.y*n.y + n.z*n.z);
+        return num/del;
+    }
+
 
     bool belong_to_plane(Point p) const {
         Point n = this->normal();
@@ -122,8 +137,8 @@ public:
     }
 
     Point projection(Point p) const {
-        double d = this->distance({p.x, p.y, p.z});
-        Point n = this->normal();
+        double d = this->distance(p);
+        Point n = this->normal() * d;
         Point p1{p + n}, p2{p - n};
         if (this->belong_to_plane(p1))
             return p1;
@@ -139,7 +154,30 @@ public:
         return this->on_triangle(p);
     }
 
-    
+    // p - точка, через которую проходит
+    // v - направляющий вектор
+    bool parallel(Point p, Point l) const {
+        double d = this->distance(p);
+        double dd = (this->projection(p+l)-(p+l)).r();
+        return std::abs(dd - d) < std::pow(10, -10);
+    }
+
+    Point cross_point(Point p, Point l) const {
+        if (parallel(p, l)) {
+            throw std::runtime_error("this line and pale are parallel");
+        }
+
+        auto coef = this->coeffs();
+        double x{v[0]->x}, y(v[0]->y), z(v[0]->z);
+        double A{coef[0]}, B{coef[1]}, C{coef[2]}, D{coef[3]};
+        double t = -(A*p.x + B*p.y + C*p.z + D) / (A*l.x+B*l.y+C*l.z);
+        return {l.x*t+p.x, l.y*t+p.y, l.z*t+p.z};
+    }
+
+    bool cross_triangle(Point p, Point l) const {
+        Point pp = this->cross_point(p, l);
+        return this->on_triangle(pp);
+    }
 
     // ================= getters ================ //
     std::vector <point_ptr> get_v() const {

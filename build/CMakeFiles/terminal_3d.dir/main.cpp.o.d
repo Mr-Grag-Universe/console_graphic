@@ -145,6 +145,19 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/ostream.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/istream \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/istream.tcc \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/iomanip \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/locale \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/locale_facets_nonio.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/ctime \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/codecvt.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/locale_facets_nonio.tcc \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/locale_conv.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/quoted_string.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/sstream \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/sstream.tcc \
   /usr/include/sys/stat.h /usr/include/bits/stat.h \
   /usr/include/bits/struct_stat.h /usr/include/bits/statx.h \
   /usr/include/linux/stat.h /usr/include/linux/types.h \
@@ -237,4 +250,5 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /home/stepan/Desktop/console_graphic/light_srcs/../Point.h \
   /home/stepan/Desktop/console_graphic/light_srcs/../Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
-  /home/stepan/Desktop/console_graphic/objects/../Object.h
+  /home/stepan/Desktop/console_graphic/objects/../Object.h \
+  /home/stepan/Desktop/console_graphic/Render.h
