@@ -11,35 +11,38 @@
 
 class Polyhedron {
 public:
-    std::set <Point> v = {};         // vertexes
+    std::set <point_ptr> v = {};         // vertexes
     std::set <Triangle> f = {};      // faces
     std::set <Section> e = {};         // edges
 
     Polyhedron() {}
-    Polyhedron(Point p) : v({p}) {}
+    Polyhedron(point_ptr p) : v({p}) {}
     Polyhedron(Triangle t) {
         f.insert(t);
-        std::vector<Point> V = t.get_v();
+        std::vector<point_ptr> V = t.get_v();
         v.insert(V.begin(), V.end());
         std::vector<Section> E = t.get_e();
         e.insert(E.begin(), E.end());
     }
     Polyhedron(std::initializer_list<Triangle> ts) {
-        for (auto & t : ts) {
+        for (auto t : ts) {
             f.insert(t);
-            std::vector<Point> V = t.get_v();
-            v.insert(V.begin(), V.end());
+            std::vector<point_ptr> V = t.get_v();
+            for (auto el : V)
+                v.insert(el);
             std::vector<Section> E = t.get_e();
+            for (auto el : E)
+                e.insert(el);
             e.insert(E.begin(), E.end());
         }
     }
 
-    void add_point(const Point & p) {
+    void add_point(const point_ptr p) {
         v.insert(p);
     }
 
     void add_face(Triangle t) {
-        std::vector<Point> V = t.get_v();
+        std::vector<point_ptr> V = t.get_v();
         v.insert(V.begin(), V.end());
         f.emplace(t);
     }
@@ -51,10 +54,10 @@ public:
 
         for (auto & vertex : v) {
             std::set <Triangle> s = {};
-            std::map <Point, int> m = {};
+            std::map <point_ptr, int> m = {};
             for (auto & face : f) {
-                std::vector <Point> a = face.get_v();
-                auto it = std::find(a.begin(), a.end(), vertex);
+                std::vector <point_ptr> a = face.get_v();
+                auto it = std::find_if(a.begin(), a.end(), [vertex](const point_ptr & p){ return *p == *vertex; });
 
                 // если наша вершина принадлежит данной грани
                 if (it != a.end()) {
@@ -86,10 +89,16 @@ public:
         return 1;
     }
 
+    virtual void move(const Point & p) {
+        for (auto & tr : v) {
+
+        }
+    }
+
     // ============ getters ============ //
-    std::set <Point>    get_v() const { return v; }
-    std::set <Triangle> get_f() const { return f; }
-    std::set <Section>  get_e() const { return e; }
-};
+    std::set <point_ptr>    get_v() const { return v; }
+    std::set <Triangle>     get_f() const { return f; }
+    std::set <Section>      get_e() const { return e; }
+}; 
 
 #endif // POLYHEDRON_CLASS_H

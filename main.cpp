@@ -5,11 +5,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <memory>
 #include "atrib.h"
 #include "Point.h"
 #include "Triangle.h"
 #include "Polyhedron.h"
-#include "ClosedPolygon.h"
+#include "ClosedPolyhedron.h"
 
 #define home()              printf(ESC "[H")
 #define clrscr()            printf(ESC "[2J")
@@ -20,6 +21,11 @@
 #define set_display_atrib(color)    printf(ESC "[%dm", color)
 
 
+void render() {
+
+}
+
+
 int main() {
     home();
 	clrscr();
@@ -27,15 +33,25 @@ int main() {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 	
-    Triangle t = {{0,0,0}, {1,0,0}, {0,1,0}};
+    std::vector<point_ptr> points = {
+        std::make_shared<Point>(Point(0,0,0)),
+        std::make_shared<Point>(Point(1,0,0)),
+        std::make_shared<Point>(Point(0,1,0)),
+        std::make_shared<Point>(Point(0,0,1)),
+        std::make_shared<Point>(Point(1,1,0)),
+        std::make_shared<Point>(Point(1,0,1)),
+        std::make_shared<Point>(Point(0,1,1)),
+        std::make_shared<Point>(Point(1,1,1))
+    };
+    Triangle t = {points[0], points[1], points[2]};
     std::cout << t.S() << std::endl;
 
     Polyhedron p = {t};
-    p.add_face({{1,0,0}, {0,0,1}, {0,0,0}});
-    p.add_face({{0,1,0}, {0,0,1}, {0,0,0}});
-    p.add_face({{1,0,0}, {0,0,1}, {0,1,0}});
+    p.add_face({points[1], points[3], points[0]});
+    p.add_face({points[2], points[3], points[0]});
+    p.add_face({points[1], points[3], points[2]});
     try {
-        ClosedPolygon cp(p);
+        ClosedPolyhedron cp(p);
     } catch (std::string s) {
         std::cout << s << std::endl;
     }

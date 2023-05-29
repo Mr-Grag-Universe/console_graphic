@@ -75,9 +75,28 @@ public:
     bool operator==(const Point & p) const {
         return (x == p.x) && (y == p.y) && (z == p.z);
     }
+    bool operator!=(const Point & p) const {
+        return (x != p.x) || (y != p.y) || (z != p.z);
+    }
     bool operator<(const Point & p) const {
-        return (x < p.x) && (y < p.y) && (z < p.z);
+        if (this->r() < p.r()) {
+            return true;
+        } else if (this->r() > p.r()) {
+            return false;
+        } else if (x < p.x) {
+            return true;
+        } else if (x != p.x) {
+            return false;
+        } else if (y < p.y) {
+            return true;
+        } else if (y != p.y) {
+            return false;
+        }
+        return (z < p.z);
     }
 };
+
+#include <memory>
+using point_ptr = std::shared_ptr<Point>;
 
 #endif

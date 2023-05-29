@@ -1,15 +1,15 @@
-#ifndef CLOSED_POLYGON_CLASS_H
-#define CLOSED_POLYGON_CLASS_H
+#ifndef CLOSED_POLYHEDRON_CLASS_H
+#define CLOSED_POLYHEDRON_CLASS_H
 
 #include "Polyhedron.h"
 #include "Section.h"
 #include <string>
 
-class ClosedPolygon : Polyhedron {
+class ClosedPolyhedron : Polyhedron {
 private:
 public:
 
-    ClosedPolygon(const Polyhedron & p) {
+    ClosedPolyhedron(const Polyhedron & p) {
         if (p.closed()) {
             e = p.get_e();
             v = p.get_v();
@@ -20,4 +20,4 @@ public:
     }
 };
 
-#endif // CLOSED_POLYGON_CLASS_H
+#endif // CLOSED_POLYHEDRON_CLASS_H
