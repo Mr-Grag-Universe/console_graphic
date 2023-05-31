@@ -16,16 +16,17 @@
 class Scene {
     std::vector<std::shared_ptr<Object>> objects = {std::make_shared<Tetraider>()};
     std::vector<std::shared_ptr<LightSrc>> lights = {std::make_shared<LPoint>(LPoint({5, 5, 5}))};
-    std::vector<std::shared_ptr<Camera>> cameras = {std::make_shared<Camera>(Camera({8, 8, 8}, {-1, -1, -1}, {10, 10}, {10, 10}))};
+    std::vector<std::shared_ptr<Camera>> cameras = {std::make_shared<Camera>(Camera({2, 2, 2}, {-1, -1, -1}, {20, 20}, {3, 3}))};
 
-    static double intensity(const Triangle & t, std::vector<std::shared_ptr<LightSrc>> lights) {
+    static double intensity(const Point p, Point n, std::vector<std::shared_ptr<LightSrc>> lights) {
         // временное решение через точечные источники света
         // по хорошему надо для каждого конкретного источника свой способ подсчёта писать
         double sum = 0;
         for (auto & l : lights) {
-            Point V = (t.projection(l->_point()) - l->_point());
+            Point light_p = l->_point();
+            Point V = (p - light_p);
             V = V * (1/V.r());
-            sum += t.normal()*V;
+            sum -= n*V;
         }
         return (sum+1)/2;
     }
@@ -64,6 +65,10 @@ public:
                 //      * приоритет в рамках одной фигуры отдаём ближайшей грани
                 // 3) ищем сумму / берём среднее от самой многочисленной группы
 
+                if (std::abs(point.z - 8) <= 0.000001) {
+                    std::cout << "hi\n";
+                }
+
                 // собираем освещённость
                 std::vector<std::pair<double, double>> l = {};
                 for (auto & o : objects) {
@@ -77,7 +82,8 @@ public:
                             continue;
                         }
                         if (err) {
-                            double d = (f.cross_point(point, camera.direction) - point).r();
+                            Point cross = f.cross_point(point, camera.direction);
+                            double d = (cross - point).r();
                             if (d < m) {
                                 t = f;
                                 m = d;
@@ -85,7 +91,10 @@ public:
                         }
                     }
                     if (m != std::pow(10, 20)) {
-                        double in = intensity(t, lights);
+                        Point p = t.projection(point);
+                        Point n = t.normal();
+                        n = (n * camera.direction < 0) ? n : -n;
+                        double in = intensity(p, n, lights);
                         l.push_back(std::make_pair(in, m));
                     }
                 }
@@ -93,7 +102,7 @@ public:
                 // считаем среднее
                 double sum = 0;
                 for (auto & el : l)
-                    sum += el.first / std::pow(el.second, 2);
+                    sum += el.first; // / std::pow(el.second, 2);
 
                 pixel = sum;
             }

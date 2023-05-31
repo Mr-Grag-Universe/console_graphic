@@ -38,6 +38,10 @@ public:
     double len() const {
         return (*v0-*v1).r();
     }
+
+    std::pair<point_ptr, point_ptr> get_v() const {
+        return std::make_pair(v1, v0);
+    }
 };
 
 #endif // SECTION_CLASS_H

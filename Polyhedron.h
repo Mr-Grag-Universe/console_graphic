@@ -89,9 +89,36 @@ public:
         return 1;
     }
 
+    void sync() {
+        std::map <Point, std::shared_ptr<Point>> points;
+        for (auto & face : f) {
+            auto vs = face.get_v();
+            for (auto & v : vs) {
+                points[*v] = v;
+            }
+        }
+
+        for (auto & edge : e) {
+            auto vs = edge.get_v();
+            points[*(vs.first)] = vs.first;
+            points[*(vs.second)] = vs.second;
+        }
+
+        for (Triangle face : f) {
+            auto vs = face.get_v();
+            face.set_v({points[*(vs[0])], points[*(vs[1])], points[*(vs[2])]});
+        }
+
+        for (auto & edge : e) {
+            auto vs = edge.get_v();
+            points[*(vs.first)] = vs.first;
+            points[*(vs.second)] = vs.second;
+        }
+    }
+
     virtual void move(const Point & p) {
         for (auto & tr : v) {
-
+            
         }
     }
 

@@ -146,7 +146,7 @@ public:
     }
 
     bool on_triangle(Point p) const {
-        return inside_triangle(v[0]->x, v[0]->y, v[0]->z, v[1]->x, v[1]->y, v[1]->z, v[2]->x, v[2]->y, v[2]->z, p.x, p.y, p.z);
+        return inside_triangle(p.x, p.y, p.z, v[0]->x, v[0]->y, v[0]->z, v[1]->x, v[1]->y, v[1]->z, v[2]->x, v[2]->y, v[2]->z);
     }
 
     bool projection_on_triangle(Point p) const {
@@ -190,6 +190,16 @@ public:
             res.emplace_back(el.second);
         }
         return res;
+    }
+
+    // ================= setters ================== //
+    void    set_v(std::initializer_list<point_ptr> l) {
+        for (size_t i = 0; i < 3; ++i) {
+            v[0] = l.begin()[i];
+        }
+        e[std::make_pair(0, 1)] = Section(std::make_pair(l.begin()[0], l.begin()[1]));
+        e[std::make_pair(1, 2)] = Section(std::make_pair(l.begin()[1], l.begin()[2]));
+        e[std::make_pair(0, 2)] = Section(std::make_pair(l.begin()[0], l.begin()[2]));
     }
 };
 

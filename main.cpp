@@ -77,7 +77,7 @@ int main() {
     auto m = render(M);
     for (auto & line : m) {
         for (auto & el : line) {
-            std::cout << /*std::setw(7) << std::left << std::fixed << std::setprecision(3)<< */ el << " ";
+            std::cout << std::setw(2) << std::internal << std::fixed << std::setprecision(3)<< el << " ";
         }
         std::cout << std::endl;
     }

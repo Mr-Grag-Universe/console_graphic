@@ -35,6 +35,9 @@ public:
     Point operator-(const Point & p) const {
         return Point(x-p.x, y-p.y, z-p.z);
     }
+    Point operator-() const {
+        return Point(-x, -y, -z);
+    }
     Point operator+(const Point & p) const {
         return Point(x+p.x, y+p.y, z+p.z);
     }

@@ -18,7 +18,7 @@ std::vector <std::vector<char>> render(std::vector<std::vector<double>> M) {
     for (size_t i = 0; i < M.size(); ++i) {
         picture[i] = std::vector<char>(M[0].size());
         for (size_t j = 0; j < M[0].size(); ++j) {
-            picture[i][j] = gscale1[gscale1.size() - (size_t) ((gscale1.size()-1)*(M[i][j]/m))];
+            picture[i][j] = (m) ? gscale1[gscale1.size() - (size_t) ((gscale1.size()-1)*(M[i][j]/m))] : ' ';
         }
     }
     return picture;
