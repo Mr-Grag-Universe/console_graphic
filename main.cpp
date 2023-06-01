@@ -33,6 +33,9 @@ void render() {
 int main() {
     home();
 	clrscr();
+    // printf(ESC "\x1b]rgb:1/24/86");
+    // printf("111");
+    // return 0;
 
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
@@ -74,12 +77,30 @@ int main() {
         }
         std::cout << std::endl;
     }
-    auto m = render(M);
+    auto m = render_to_char(M);
     for (auto & line : m) {
         for (auto & el : line) {
             std::cout << std::setw(2) << std::internal << std::fixed << std::setprecision(3)<< el << " ";
         }
         std::cout << std::endl;
+    }
+
+    while (true) {
+        clrscr();
+        auto m = render_to_t_colors(M);
+        for (size_t i = 0; i < m.size(); ++i) {
+            auto line = m[i];
+            for (size_t j = 0; j < line.size(); ++j) {
+                auto & color = line[j];
+                // std::cout << std::setw(4) << std::internal << std::fixed << std::setprecision(3)<< color << " ";
+                gotoxy((int) j*2, (int) i);
+                printf("\e[48;5;%dm .", color); //  set_display_atrib();
+                // printf("#");
+                resetcolor();
+            }
+            std::cout << std::endl;
+        }
+        break;
     }
 
 	return 0;

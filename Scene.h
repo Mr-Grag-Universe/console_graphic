@@ -39,13 +39,13 @@ public:
     std::vector <std::vector<double>> take_look(size_t ind=0) const {
         Camera & camera = *(cameras[ind]);
 
-        auto grid = camera.grid();
+        /*auto grid = camera.grid();
         for (auto & line : grid) {
             for (auto & p : line) {
                 std::cout << p << " ";
             }
             std::cout << std::endl;
-        }
+        }*/
 
         Camera::Resolution resolution = camera.resolution;
         std::vector <std::vector<double>> picture(resolution.y);
