@@ -181,16 +181,24 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/thread \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/std_thread.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/tuple \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/uses_allocator.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/unique_ptr.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/this_thread_sleep.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/chrono.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/ratio \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/cstdint \
+  /usr/lib/clang/15.0.7/include/stdint.h /usr/include/stdint.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/limits \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/parse_numbers.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/memory \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_tempbuf.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_uninitialized.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_raw_storage_iter.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/align.h \
-  /usr/lib/clang/15.0.7/include/stdint.h /usr/include/stdint.h \
-  /usr/include/bits/stdint-uintn.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/uses_allocator.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/unique_ptr.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/tuple \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/shared_ptr.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/shared_ptr_base.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/allocated_ptr.h \
@@ -251,4 +259,5 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /home/stepan/Desktop/console_graphic/light_srcs/../Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
   /home/stepan/Desktop/console_graphic/objects/../Object.h \
+  /home/stepan/Desktop/console_graphic/objects/Cube.h \
   /home/stepan/Desktop/console_graphic/Render.h

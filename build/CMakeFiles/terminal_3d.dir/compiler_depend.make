@@ -234,17 +234,25 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
+  /usr/include/c++/13.1.1/thread \
+  /usr/include/c++/13.1.1/bits/std_thread.h \
+  /usr/include/c++/13.1.1/tuple \
+  /usr/include/c++/13.1.1/bits/uses_allocator.h \
+  /usr/include/c++/13.1.1/bits/unique_ptr.h \
+  /usr/include/c++/13.1.1/bits/this_thread_sleep.h \
+  /usr/include/c++/13.1.1/bits/chrono.h \
+  /usr/include/c++/13.1.1/ratio \
+  /usr/include/c++/13.1.1/cstdint \
+  /usr/lib/clang/15.0.7/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/c++/13.1.1/limits \
+  /usr/include/c++/13.1.1/bits/parse_numbers.h \
   /usr/include/c++/13.1.1/memory \
   /usr/include/c++/13.1.1/bits/stl_tempbuf.h \
   /usr/include/c++/13.1.1/bits/stl_uninitialized.h \
   /usr/include/c++/13.1.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13.1.1/bits/align.h \
-  /usr/lib/clang/15.0.7/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/bits/stdint-uintn.h \
-  /usr/include/c++/13.1.1/bits/uses_allocator.h \
-  /usr/include/c++/13.1.1/bits/unique_ptr.h \
-  /usr/include/c++/13.1.1/tuple \
   /usr/include/c++/13.1.1/bits/shared_ptr.h \
   /usr/include/c++/13.1.1/bits/shared_ptr_base.h \
   /usr/include/c++/13.1.1/bits/allocated_ptr.h \
@@ -308,6 +316,7 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /home/stepan/Desktop/console_graphic/Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
   /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/objects/Cube.h \
   /home/stepan/Desktop/console_graphic/Render.h
 
 
@@ -343,8 +352,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/stl_bvector.h:
 
-/usr/include/c++/13.1.1/bits/stl_vector.h:
-
 /usr/include/c++/13.1.1/vector:
 
 /usr/include/c++/13.1.1/bits/erase_if.h:
@@ -372,6 +379,16 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/flt-eval-method.h:
 
 /usr/include/math.h:
+
+/home/stepan/Desktop/console_graphic/Point.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/13.1.1/backward/auto_ptr.h:
+
+/usr/lib/clang/15.0.7/include/sanitizer/tsan_interface.h:
+
+/usr/include/c++/13.1.1/bits/atomic_base.h:
 
 /usr/include/c++/13.1.1/ext/string_conversions.h:
 
@@ -427,6 +444,10 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/asm-generic/bitsperlong.h:
 
+/usr/include/c++/13.1.1/cmath:
+
+/usr/include/bits/types/__sigset_t.h:
+
 /usr/include/bits/waitstatus.h:
 
 /usr/include/bits/wchar.h:
@@ -458,6 +479,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/ioctls.h:
 
 /usr/include/bits/types/struct_timeval.h:
+
+/usr/include/c++/13.1.1/limits:
 
 /home/stepan/Desktop/console_graphic/objects/Tetraider.h:
 
@@ -493,8 +516,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/libc-header-start.h:
 
-/home/stepan/Desktop/console_graphic/Point.h:
-
 /home/stepan/Desktop/console_graphic/Section.h:
 
 /usr/lib/clang/15.0.7/include/stddef.h:
@@ -506,6 +527,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/clocale:
 
 /usr/include/bits/floatn-common.h:
+
+/home/stepan/Desktop/console_graphic/objects/Cube.h:
 
 /usr/include/c++/13.1.1/bits/stl_algo.h:
 
@@ -545,6 +568,10 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/memoryfwd.h:
 
+/usr/include/c++/13.1.1/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/13.1.1/bits/range_access.h:
+
 /usr/include/c++/13.1.1/bits/stringfwd.h:
 
 /usr/include/c++/13.1.1/bits/align.h:
@@ -571,13 +598,11 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/nested_exception.h:
 
+/usr/include/c++/13.1.1/bits/parse_numbers.h:
+
 /usr/include/asm/errno.h:
 
 /usr/include/bits/stdint-uintn.h:
-
-/usr/include/bits/types/__sigset_t.h:
-
-/usr/include/c++/13.1.1/cmath:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -596,6 +621,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/debug/assertions.h:
 
 /usr/include/asm/posix_types_64.h:
+
+/usr/include/c++/13.1.1/ratio:
 
 /usr/include/bits/types/struct_timespec.h:
 
@@ -645,8 +672,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
-/usr/include/c++/13.1.1/bits/atomic_lockfree_defines.h:
-
 /usr/include/c++/13.1.1/bits/stl_relops.h:
 
 /usr/include/bits/fcntl-linux.h:
@@ -691,6 +716,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/linux/close_range.h:
 
+/usr/include/c++/13.1.1/cstdint:
+
 /usr/include/bits/uintn-identity.h:
 
 /usr/include/c++/13.1.1/cerrno:
@@ -723,6 +750,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/types/__fpos64_t.h:
 
+/usr/include/c++/13.1.1/bits/std_thread.h:
+
 /usr/include/c++/13.1.1/sstream:
 
 /usr/include/sys/stat.h:
@@ -745,6 +774,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/basic_string.tcc:
 
+/usr/include/c++/13.1.1/thread:
+
 /usr/include/c++/13.1.1/system_error:
 
 /usr/include/features-time64.h:
@@ -766,6 +797,10 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/gnu/stubs.h:
 
 /usr/include/c++/13.1.1/bits/locale_facets.tcc:
+
+/usr/include/c++/13.1.1/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/13.1.1/bits/chrono.h:
 
 /usr/include/c++/13.1.1/bits/ostream.tcc:
 
@@ -857,21 +892,15 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/getopt_core.h:
 
-/usr/include/c++/13.1.1/bits/atomic_base.h:
+/home/stepan/Desktop/console_graphic/atrib.h:
 
-/usr/include/c++/13.1.1/memory:
+/usr/include/linux/falloc.h:
 
-/usr/include/c++/13.1.1/bits/stl_uninitialized.h:
+/usr/include/bits/unistd_ext.h:
 
-/usr/include/c++/13.1.1/bits/stl_raw_storage_iter.h:
+/usr/include/c++/13.1.1/bits/algorithmfwd.h:
 
-/usr/include/c++/13.1.1/map:
-
-/usr/include/c++/13.1.1/bits/localefwd.h:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
+/usr/include/c++/13.1.1/tuple:
 
 /usr/include/linux/posix_types.h:
 
@@ -881,9 +910,23 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/uses_allocator.h:
 
-/usr/include/c++/13.1.1/bits/algorithmfwd.h:
+/usr/include/c++/13.1.1/bits/stl_vector.h:
 
-/usr/include/c++/13.1.1/tuple:
+/usr/include/c++/13.1.1/bits/this_thread_sleep.h:
+
+/usr/include/c++/13.1.1/bits/stl_uninitialized.h:
+
+/usr/include/c++/13.1.1/map:
+
+/usr/include/c++/13.1.1/bits/localefwd.h:
+
+/usr/include/endian.h:
+
+/usr/include/stdint.h:
+
+/usr/include/c++/13.1.1/memory:
+
+/usr/include/c++/13.1.1/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/13.1.1/bits/cxxabi_forced.h:
 
@@ -904,19 +947,3 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/c++/13.1.1/ext/aligned_buffer.h:
 
 /usr/include/c++/13.1.1/ext/concurrence.h:
-
-/usr/include/c++/13.1.1/bits/range_access.h:
-
-/usr/include/c++/13.1.1/bits/shared_ptr_atomic.h:
-
-/usr/lib/clang/15.0.7/include/sanitizer/tsan_interface.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/13.1.1/backward/auto_ptr.h:
-
-/usr/include/linux/falloc.h:
-
-/usr/include/bits/unistd_ext.h:
-
-/home/stepan/Desktop/console_graphic/atrib.h:

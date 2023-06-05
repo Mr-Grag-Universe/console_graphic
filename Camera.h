@@ -20,6 +20,7 @@ public:
     Point direction = {1, 1, 1};
     Resolution resolution = {10, 10};
     Size size = {10, 10};
+    double angle = 0;
     
 
     Camera(Point p = {0, 0, 0}, Point d = {1, 1, 1}, Resolution r = {10, 10}, Size s = {10, 10}) : 
@@ -80,6 +81,55 @@ public:
         return p;
     }
 
+    Point pixel_direction(size_t i, size_t j) const {
+        // считаем вектор высоты из точки до плоскости камеры
+        double tan_ax = std::tan(angle/2);
+        double h = (tan_ax < 0.00000001) ? -1 : size.x / tan_ax;
+        if (h < 0)
+            return direction;
+        // Point d = direction * (h / direction.r());
+
+        double cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
+        double cos_1 = position.x/(position.r()*cos_3);
+        double sin_3 = std::sin(std::acos(cos_3));
+        double sin_1 = std::sin(std::acos(cos_1));
+
+        int x = (int)j-(int)resolution.x/2;
+        int y = (int)i-(int)resolution.y/2;
+        Point p = Point({size.x * (double)x/(double)resolution.x, 0, size.y*(double)y/(double)resolution.y});
+        Point d = Point({0, h, 0});
+
+        p = Point({0, position.r(), 0}) + p;
+        d = Point({0, position.r(), 0}) + d;
+
+        std::array<double, 3> line1 = {   1,    0,      0       };
+        std::array<double, 3> line2 = {   0,    cos_3,  -sin_3  };
+        std::array<double, 3> line3 = {   0,    sin_3,  cos_3   };
+        std::array<std::array<double, 3>, 3> M1 = {
+            line1,
+            line2,
+            line3
+        };
+        line1 = {cos_1, -sin_1, 0};
+        line2 = {sin_1, cos_1, 0};
+        line3 = {0, 0, 1};
+        std::array<std::array<double, 3>, 3> M2 = {
+            line1,
+            line2,
+            line3
+        };
+
+        std::array<double, 3> line = M_x(M1, {p.x, p.y, p.z});
+        line = M_x(M2, line);
+        p = {line[0], line[1], line[2]};
+
+        line = M_x(M1, {d.x, d.y, d.z});
+        line = M_x(M2, line);
+        d = {line[0], line[1], line[2]};
+
+        return p-d;
+    }
+
     std::vector<std::vector<Point>> grid() const {
         std::vector<std::vector<Point>> g(size.y);
         for (size_t i = 0; i < size.y; ++i) {
@@ -89,6 +139,22 @@ public:
             }
         }
         return g;
+    }
+
+    void move(Point p) {
+        this->position += p;
+    }
+
+    void resize(double x, double y) {
+        size.x = x;
+        size.y = y;
+    }
+
+    void set_angle(double a) {
+        if (a < 0 || a > M_PI) {
+            throw std::runtime_error("bad angle");
+        }
+        angle = a;
     }
 };
 

@@ -235,17 +235,25 @@ CMakeFiles/terminal_3d.dir/main.cpp.o
  /usr/include/bits/getopt_core.h
  /usr/include/bits/unistd_ext.h
  /usr/include/linux/close_range.h
+ /usr/include/c++/13.1.1/thread
+ /usr/include/c++/13.1.1/bits/std_thread.h
+ /usr/include/c++/13.1.1/tuple
+ /usr/include/c++/13.1.1/bits/uses_allocator.h
+ /usr/include/c++/13.1.1/bits/unique_ptr.h
+ /usr/include/c++/13.1.1/bits/this_thread_sleep.h
+ /usr/include/c++/13.1.1/bits/chrono.h
+ /usr/include/c++/13.1.1/ratio
+ /usr/include/c++/13.1.1/cstdint
+ /usr/lib/clang/15.0.7/include/stdint.h
+ /usr/include/stdint.h
+ /usr/include/bits/stdint-uintn.h
+ /usr/include/c++/13.1.1/limits
+ /usr/include/c++/13.1.1/bits/parse_numbers.h
  /usr/include/c++/13.1.1/memory
  /usr/include/c++/13.1.1/bits/stl_tempbuf.h
  /usr/include/c++/13.1.1/bits/stl_uninitialized.h
  /usr/include/c++/13.1.1/bits/stl_raw_storage_iter.h
  /usr/include/c++/13.1.1/bits/align.h
- /usr/lib/clang/15.0.7/include/stdint.h
- /usr/include/stdint.h
- /usr/include/bits/stdint-uintn.h
- /usr/include/c++/13.1.1/bits/uses_allocator.h
- /usr/include/c++/13.1.1/bits/unique_ptr.h
- /usr/include/c++/13.1.1/tuple
  /usr/include/c++/13.1.1/bits/shared_ptr.h
  /usr/include/c++/13.1.1/bits/shared_ptr_base.h
  /usr/include/c++/13.1.1/bits/allocated_ptr.h
@@ -309,5 +317,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o
  /home/stepan/Desktop/console_graphic/Light.h
  /home/stepan/Desktop/console_graphic/objects/Tetraider.h
  /home/stepan/Desktop/console_graphic/Object.h
+ /home/stepan/Desktop/console_graphic/objects/Cube.h
  /home/stepan/Desktop/console_graphic/Render.h
 

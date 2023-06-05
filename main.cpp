@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <thread>
 #include <memory>
 #include "atrib.h"
 #include "Point.h"
@@ -24,6 +25,7 @@
 #define resetcolor()        printf(ESC "[0m")
 #define set_display_atrib(color)    printf(ESC "[%dm", color)
 
+using namespace std::literals::chrono_literals;
 
 void render() {
 
@@ -85,8 +87,15 @@ int main() {
         std::cout << std::endl;
     }
 
+    int ind = 0;
+    s.cameras[0]->set_angle(M_PI/4);
+    s.objects[0]->move({-10, 0, 0});
+    s.objects.push_back(std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())));
+    // s.cameras[0]->position = {10, 10, 10};
     while (true) {
+        ++ind;
         clrscr();
+        M = s.take_look();
         auto m = render_to_t_colors(M);
         for (size_t i = 0; i < m.size(); ++i) {
             auto line = m[i];
@@ -100,7 +109,10 @@ int main() {
             }
             std::cout << std::endl;
         }
-        break;
+        s.cameras[0]->move({1, 1, 1});
+        // s.cameras[0]->resize(1+ind, 1+ind);
+        std::cout << s.cameras[0]->position << std::endl;
+        std::this_thread::sleep_for(1s);
     }
 
 	return 0;

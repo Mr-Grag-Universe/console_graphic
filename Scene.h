@@ -10,10 +10,12 @@
 #include "Camera.h"
 #include "light_srcs/LPoint.h"
 #include "objects/Tetraider.h"
+#include "objects/Cube.h"
 #include "my_math.h"
 
 
 class Scene {
+public:
     std::vector<std::shared_ptr<Object>> objects = {std::make_shared<Tetraider>()};
     std::vector<std::shared_ptr<LightSrc>> lights = {std::make_shared<LPoint>(LPoint({5, 5, 5}))};
     std::vector<std::shared_ptr<Camera>> cameras = {std::make_shared<Camera>(Camera({2, 2, 2}, {-1, -1, -1}, {20, 20}, {3, 3}))};
@@ -39,13 +41,13 @@ public:
     std::vector <std::vector<double>> take_look(size_t ind=0) const {
         Camera & camera = *(cameras[ind]);
 
-        /*auto grid = camera.grid();
+        auto grid = camera.grid();
         for (auto & line : grid) {
             for (auto & p : line) {
                 std::cout << p << " ";
             }
             std::cout << std::endl;
-        }*/
+        }
 
         Camera::Resolution resolution = camera.resolution;
         std::vector <std::vector<double>> picture(resolution.y);
@@ -56,6 +58,7 @@ public:
             for (size_t j = 0; j < line.size(); ++j) {
                 double & pixel = line[j];
                 Point point = camera.pixel_point(i, j);
+                Point p_d = camera.pixel_direction(i, j);
 
                 // process certain pixel
                 // пока тактика такая:
@@ -77,12 +80,12 @@ public:
                     for (auto & f : o->get_faces()) {
                         bool err;
                         try {
-                            err = f.cross_triangle(point, camera.direction);
+                            err = f.cross_triangle(point, p_d);
                         } catch(...) {
                             continue;
                         }
                         if (err) {
-                            Point cross = f.cross_point(point, camera.direction);
+                            Point cross = f.cross_point(point, p_d);
                             double d = (cross - point).r();
                             if (d < m) {
                                 t = f;
@@ -93,7 +96,7 @@ public:
                     if (m != std::pow(10, 20)) {
                         Point p = t.projection(point);
                         Point n = t.normal();
-                        n = (n * camera.direction < 0) ? n : -n;
+                        n = (n * p_d < 0) ? n : -n;
                         double in = intensity(p, n, lights);
                         l.push_back(std::make_pair(in, m));
                     }
