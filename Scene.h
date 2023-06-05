@@ -27,8 +27,9 @@ public:
         for (auto & l : lights) {
             Point light_p = l->_point();
             Point V = (p - light_p);
+            double len = V.r();
             V = V * (1/V.r());
-            sum -= n*V;
+            sum -= n*V / std::pow(1+len, 1);
         }
         return (sum+1)/2;
     }
@@ -41,13 +42,13 @@ public:
     std::vector <std::vector<double>> take_look(size_t ind=0) const {
         Camera & camera = *(cameras[ind]);
 
-        auto grid = camera.grid();
-        for (auto & line : grid) {
-            for (auto & p : line) {
-                std::cout << p << " ";
-            }
-            std::cout << std::endl;
-        }
+        // auto grid = camera.grid();
+        // for (auto & line : grid) {
+        //     for (auto & p : line) {
+        //         std::cout << p << " ";
+        //     }
+        //     std::cout << std::endl;
+        // }
 
         Camera::Resolution resolution = camera.resolution;
         std::vector <std::vector<double>> picture(resolution.y);
@@ -94,7 +95,7 @@ public:
                         }
                     }
                     if (m != std::pow(10, 20)) {
-                        Point p = t.projection(point);
+                        Point p = t.cross_point(point, p_d);
                         Point n = t.normal();
                         n = (n * p_d < 0) ? n : -n;
                         double in = intensity(p, n, lights);

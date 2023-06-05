@@ -118,7 +118,7 @@ public:
 
     virtual void move(const Point & p) {
         for (auto & tr : v) {
-            
+            *tr += p;
         }
     }
 

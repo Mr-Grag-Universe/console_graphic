@@ -89,13 +89,26 @@ int main() {
 
     int ind = 0;
     s.cameras[0]->set_angle(M_PI/4);
-    s.objects[0]->move({-10, 0, 0});
+    s.objects[0]->move({-1, -1});
+    // s.objects[0] = std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())); //->move({-10, 0, 0});
     s.objects.push_back(std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())));
+    s.cameras[0]->position = {1, 1, 1};
+    s.cameras[0]->size = {5, 5};
+    s.cameras[0]->resolution = {50, 50};
+    s.lights[0]->position = {0, 5, 3};
     // s.cameras[0]->position = {10, 10, 10};
+    double alpha = 0;
+    std::vector<std::pair<double, double>> coodrs(40);
     while (true) {
         ++ind;
         clrscr();
         M = s.take_look();
+        // for (auto & line : M) {
+        //     for (auto & el : line) {
+        //         std::cout << std::setw(7) << std::left << std::fixed << std::setprecision(3)<< el << " | ";
+        //     }
+        //     std::cout << std::endl;
+        // }
         auto m = render_to_t_colors(M);
         for (size_t i = 0; i < m.size(); ++i) {
             auto line = m[i];
@@ -109,10 +122,23 @@ int main() {
             }
             std::cout << std::endl;
         }
-        s.cameras[0]->move({1, 1, 1});
+        // s.cameras[0]->move({1, 1, 1});
         // s.cameras[0]->resize(1+ind, 1+ind);
         std::cout << s.cameras[0]->position << std::endl;
-        std::this_thread::sleep_for(1s);
+        std::this_thread::sleep_for(0.1s);
+
+        alpha = M_PI/20 * (ind%40);
+        coodrs[ind-1] = std::make_pair(std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI));
+
+        s.cameras[0]->position = {1*std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), 1*std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI), 1};
+        s.cameras[0]->direction = {-1*std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), -1*std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI), -1};
+
+        if (ind == 40) {
+            break;
+        }
+    }
+    for (auto & el : coodrs) {
+        std::cout << "(" << el.first << "; " << el.second << "), ";
     }
 
 	return 0;

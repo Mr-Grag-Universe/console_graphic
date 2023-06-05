@@ -7,14 +7,17 @@
 class LPoint : public LightSrc {
 public:
     double power = 10;
-    point_ptr point;
 
-    LPoint(Point p={0,0,0}, double pow=0) : point(std::make_shared<Point>(p)), power(pow) {}
-    LPoint(point_ptr pp, double pow=0) : point(pp), power(pow) {}
+    LPoint(const Point & p, double pow=0) : power(pow) {
+        position = p;
+    }
+    LPoint(Point && pp, double pow=0) : power(pow) {
+        position = pp;
+    }
     ~LPoint() = default;
 
     virtual Point _point() const {
-        return *point;
+        return position;
     }
 };
 
