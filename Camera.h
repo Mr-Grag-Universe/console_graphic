@@ -42,10 +42,15 @@ public:
 
         std::array<double, 3> line3 = {sin_1*sin_3-sin_2*cos_1*cos_3, sin_1*cos_3+sin_2*sin_3*cos_1, cos_1*cos_2};
 
+        // cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
+        // cos_1 = position.x/(position.r()*cos_3);
+        // sin_3 = std::sin(std::acos(cos_3));
+        // sin_1 = std::sin(std::acos(cos_1));
+
         cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
         cos_1 = position.x/(position.r()*cos_3);
-        sin_3 = std::sin(std::acos(cos_3));
-        sin_1 = std::sin(std::acos(cos_1));
+        sin_3 = /*std::sin(std::acos(cos_3)); */ position.z/position.r();
+        sin_1 = /*std::sin(std::acos(cos_1)); */ position.y/(position.r()*cos_3);
 
         std::array<std::array<double, 3>, 3> M = {
             line1,
@@ -91,8 +96,15 @@ public:
 
         double cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
         double cos_1 = position.x/(position.r()*cos_3);
-        double sin_3 = std::sin(std::acos(cos_3));
-        double sin_1 = std::sin(std::acos(cos_1));
+        double sin_3 = /*std::sin(std::acos(cos_3)); */ position.z/position.r();
+        double sin_1 = /*std::sin(std::acos(cos_1)); */ position.y/(position.r()*cos_3);
+
+        double sign1 = position.x*position.y;
+
+        // if (!(i || j)) {
+        //     std::cout << cos_1 << "; " << sin_1 << " ### ";
+        //     std::cout << cos_3 << "; " << sin_3 << std::endl;
+        // }
 
         int x = (int)j-(int)resolution.x/2;
         int y = (int)i-(int)resolution.y/2;
@@ -128,6 +140,57 @@ public:
         d = {line[0], line[1], line[2]};
 
         return p-d;
+    }
+
+    std::pair<Point, Point> get_pixel(size_t i, size_t j) const {
+        // считаем вектор высоты из точки до плоскости камеры
+        double tan_ax = std::tan(angle/2);
+        double h = (tan_ax < 0.00000001) ? -1 : size.x / tan_ax;
+        
+        double cos_3 = -std::sqrt(position.x*position.x + position.y*position.y)/position.r();
+        double cos_1 = position.x/(position.r()*cos_3);
+        double sin_3 = position.z/position.r();
+        double sin_1 = position.y/(position.r()*cos_3);
+
+        std::array<double, 3> line1 = {   1,    0,      0       };
+        std::array<double, 3> line2 = {   0,    cos_3,  -sin_3  };
+        std::array<double, 3> line3 = {   0,    sin_3,  cos_3   };
+        std::array<std::array<double, 3>, 3> M1 = {
+            line1,
+            line2,
+            line3
+        };
+        line1 = {cos_1, -sin_1, 0};
+        line2 = {sin_1, cos_1, 0};
+        line3 = {0, 0, 1};
+        std::array<std::array<double, 3>, 3> M2 = {
+            line1,
+            line2,
+            line3
+                };
+        
+        int x = (int)j-(int)resolution.x/2;
+        int y = (int)i-(int)resolution.y/2;
+        Point p = Point({size.x * (double)x/(double)resolution.x, 0, size.y*(double)y/(double)resolution.y});
+        Point d = Point({0, h, 0});
+
+        // считаем pixel_point
+        p = Point({0, position.r(), 0}) + p;
+        std::array<double, 3> line = M_x(M1, {p.x, p.y, p.z});
+        line = M_x(M2, line);
+        p = {line[0], line[1], line[2]};
+
+        if (h < 0)
+            d = direction;
+        else {
+            d = Point({0, position.r(), 0}) + d;
+            line = M_x(M1, {d.x, d.y, d.z});
+            line = M_x(M2, line);
+            d = {line[0], line[1], line[2]};
+            d = p-d;
+        }
+
+        return {p, d};
     }
 
     std::vector<std::vector<Point>> grid() const {

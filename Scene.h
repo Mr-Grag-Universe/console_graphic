@@ -75,6 +75,7 @@ public:
 
                 // собираем освещённость
                 std::vector<std::pair<double, double>> l = {};
+                std::vector<std::pair<double, Triangle>> cp = {};
                 for (auto & o : objects) {
                     double m = std::pow(10, 20);
                     Triangle t = Triangle({std::make_shared<Point>(Point({0, 0, 0})), std::make_shared<Point>(Point({0, 0, 1})), std::make_shared<Point>(Point({0, 1, 0}))});
@@ -100,15 +101,54 @@ public:
                         n = (n * p_d < 0) ? n : -n;
                         double in = intensity(p, n, lights);
                         l.push_back(std::make_pair(in, m));
+                        cp.push_back({m, t});
                     }
                 }
+
+                if (!cp.size()) {
+                    pixel = 0;
+                    continue;
+                }
+
+                double m = cp[0].first;
+                Triangle t = cp[0].second;
+                Point p = t.cross_point(point, p_d);
+                Point n = t.normal();
+                n = (n * p_d < 0) ? n : -n;
+                double in = intensity(p, n, lights);
+                for (auto & pair : cp) {
+                    if (pair.first < m) {
+                        m = pair.first;
+                        t = pair.second;
+
+                        p = t.cross_point(point, p_d);
+                        n = t.normal();
+                        n = (n * p_d < 0) ? n : -n;
+                        in = intensity(p, n, lights);
+
+                    } else if (m == pair.first) {
+
+                        p = pair.second.cross_point(point, p_d);
+                        n = pair.second.normal();
+                        n = (n * p_d < 0) ? n : -n;
+                        double in2 = intensity(p, n, lights);
+
+                        if (in2 > in) {
+                            t = pair.second;
+                            in = in2;
+                        }
+                    }
+                }
+
+                pixel = in;
+                continue;
 
                 // считаем среднее
                 double sum = 0;
                 for (auto & el : l)
-                    sum += el.first; // / std::pow(el.second, 2);
+                    sum += el.first / (1+std::pow(el.second, 0.1));
 
-                pixel = sum;
+                pixel = sum/std::max((int) l.size(), 1);
             }
         }
         return picture;

@@ -92,7 +92,7 @@ int main() {
     s.objects[0]->move({-1, -1});
     // s.objects[0] = std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())); //->move({-10, 0, 0});
     s.objects.push_back(std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())));
-    s.cameras[0]->position = {1, 1, 1};
+    s.cameras[0]->position = {2, 2, 2};
     s.cameras[0]->size = {5, 5};
     s.cameras[0]->resolution = {50, 50};
     s.lights[0]->position = {0, 5, 3};
@@ -120,7 +120,7 @@ int main() {
                 // printf("#");
                 resetcolor();
             }
-            std::cout << std::endl;
+            // std::cout << std::endl;
         }
         // s.cameras[0]->move({1, 1, 1});
         // s.cameras[0]->resize(1+ind, 1+ind);
