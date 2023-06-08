@@ -9,10 +9,6 @@
 #include <thread>
 #include <memory>
 #include "atrib.h"
-#include "Point.h"
-#include "Triangle.h"
-#include "Polyhedron.h"
-#include "ClosedPolyhedron.h"
 #include "Object.h"
 #include "Scene.h"
 #include "Render.h"
@@ -90,9 +86,9 @@ int main() {
     int ind = 0;
     s.cameras[0]->set_angle(M_PI/4);
     s.objects[0]->move({-1, -1});
-    // s.objects[0] = std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())); //->move({-10, 0, 0});
-    s.objects.push_back(std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())));
-    s.cameras[0]->position = {2, 2, 2};
+    s.objects[0] = std::dynamic_pointer_cast<Object>(std::make_shared<Toroid>(Toroid::Create(10, 2, 1))); //->move({-10, 0, 0});
+    // s.objects.push_back(std::dynamic_pointer_cast<Object>(std::make_shared<Cube>(Cube::CreateDefault())));
+    s.cameras[0]->position = {5, 5, 5};
     s.cameras[0]->size = {5, 5};
     s.cameras[0]->resolution = {50, 50};
     s.lights[0]->position = {0, 5, 3};
@@ -130,8 +126,12 @@ int main() {
         alpha = M_PI/20 * (ind%40);
         coodrs[ind-1] = std::make_pair(std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI));
 
-        s.cameras[0]->position = {1*std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), 1*std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI), 1};
-        s.cameras[0]->direction = {-1*std::cos((alpha <= M_PI) ? alpha : -(alpha-2*M_PI)), -1*std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI), -1};
+        double cos_x = std::cos((alpha <= M_PI) ? alpha : -s.cameras[0]->position.y*(alpha-2*M_PI));
+        double cos_y = std::sin((alpha <= M_PI/2) ? alpha : (alpha<=3*M_PI/2) ? -alpha+M_PI : alpha-2*M_PI);
+        double cos_z = 1 - cos_x*cos_x - cos_z*cos_z;
+
+        s.cameras[0]->position = {5*cos_x, 5*cos_y, s.cameras[0]->position.z};
+        s.cameras[0]->direction = {-1*cos_x, -1*cos_y, -1*cos_z};
 
         if (ind == 40) {
             break;

@@ -210,7 +210,17 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/lib/clang/15.0.7/include/sanitizer/tsan_interface.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/backward/auto_ptr.h \
   /home/stepan/Desktop/console_graphic/atrib.h \
-  /home/stepan/Desktop/console_graphic/Point.h \
+  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Geometry/geometry.h \
+  /home/stepan/Desktop/console_graphic/Geometry/my_math.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/algorithm \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_algo.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/algorithmfwd.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_heap.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/uniform_int_dist.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/array \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/compare \
+  /home/stepan/Desktop/console_graphic/Geometry/Point.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/cmath \
   /usr/include/math.h /usr/include/bits/math-vector.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
@@ -219,9 +229,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h \
-  /home/stepan/Desktop/console_graphic/Triangle.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/array \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/compare \
+  /home/stepan/Desktop/console_graphic/Geometry/Section.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Triangle.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/set \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_tree.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_set.h \
@@ -234,30 +243,23 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/map \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_map.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_multimap.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/algorithm \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_algo.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/algorithmfwd.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_heap.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/uniform_int_dist.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/utility \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_relops.h \
-  /home/stepan/Desktop/console_graphic/Section.h \
-  /home/stepan/Desktop/console_graphic/Polyhedron.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Vector.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Polyhedron.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/stack \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/deque \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_deque.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/deque.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.1.1/../../../../include/c++/13.1.1/bits/stl_stack.h \
-  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h \
-  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Geometry/ClosedPolyhedron.h \
   /home/stepan/Desktop/console_graphic/Scene.h \
   /home/stepan/Desktop/console_graphic/Light.h \
   /home/stepan/Desktop/console_graphic/Camera.h \
-  /home/stepan/Desktop/console_graphic/my_math.h \
   /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h \
-  /home/stepan/Desktop/console_graphic/light_srcs/../Point.h \
   /home/stepan/Desktop/console_graphic/light_srcs/../Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
   /home/stepan/Desktop/console_graphic/objects/../Object.h \
   /home/stepan/Desktop/console_graphic/objects/Cube.h \
+  /home/stepan/Desktop/console_graphic/objects/Toroid.h \
   /home/stepan/Desktop/console_graphic/Render.h

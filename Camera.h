@@ -1,8 +1,7 @@
 #ifndef CAMERA_CLASS_H
 #define CAMERA_CLASS_H
 
-#include "Point.h"
-#include "my_math.h"
+#include "Geometry/geometry.h"
 
 class Camera {
 public:

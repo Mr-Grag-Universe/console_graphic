@@ -1,7 +1,7 @@
 #ifndef LIGHT_CLASS_H
 #define LIGHT_CLASS_H
 
-#include "Point.h"
+#include "Geometry/geometry.h"
 
 class LightSrc {
 public:

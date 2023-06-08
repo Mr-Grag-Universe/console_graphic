@@ -264,7 +264,17 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/lib/clang/15.0.7/include/sanitizer/tsan_interface.h \
   /usr/include/c++/13.1.1/backward/auto_ptr.h \
   /home/stepan/Desktop/console_graphic/atrib.h \
-  /home/stepan/Desktop/console_graphic/Point.h \
+  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Geometry/geometry.h \
+  /home/stepan/Desktop/console_graphic/Geometry/my_math.h \
+  /usr/include/c++/13.1.1/algorithm \
+  /usr/include/c++/13.1.1/bits/stl_algo.h \
+  /usr/include/c++/13.1.1/bits/algorithmfwd.h \
+  /usr/include/c++/13.1.1/bits/stl_heap.h \
+  /usr/include/c++/13.1.1/bits/uniform_int_dist.h \
+  /usr/include/c++/13.1.1/array \
+  /usr/include/c++/13.1.1/compare \
+  /home/stepan/Desktop/console_graphic/Geometry/Point.h \
   /usr/include/c++/13.1.1/cmath \
   /usr/include/math.h \
   /usr/include/bits/math-vector.h \
@@ -276,9 +286,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/include/bits/mathcalls.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h \
-  /home/stepan/Desktop/console_graphic/Triangle.h \
-  /usr/include/c++/13.1.1/array \
-  /usr/include/c++/13.1.1/compare \
+  /home/stepan/Desktop/console_graphic/Geometry/Section.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Triangle.h \
   /usr/include/c++/13.1.1/set \
   /usr/include/c++/13.1.1/bits/stl_tree.h \
   /usr/include/c++/13.1.1/bits/stl_set.h \
@@ -291,44 +300,33 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
   /usr/include/c++/13.1.1/map \
   /usr/include/c++/13.1.1/bits/stl_map.h \
   /usr/include/c++/13.1.1/bits/stl_multimap.h \
-  /usr/include/c++/13.1.1/algorithm \
-  /usr/include/c++/13.1.1/bits/stl_algo.h \
-  /usr/include/c++/13.1.1/bits/algorithmfwd.h \
-  /usr/include/c++/13.1.1/bits/stl_heap.h \
-  /usr/include/c++/13.1.1/bits/uniform_int_dist.h \
   /usr/include/c++/13.1.1/utility \
   /usr/include/c++/13.1.1/bits/stl_relops.h \
-  /home/stepan/Desktop/console_graphic/Section.h \
-  /home/stepan/Desktop/console_graphic/Polyhedron.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Vector.h \
+  /home/stepan/Desktop/console_graphic/Geometry/Polyhedron.h \
   /usr/include/c++/13.1.1/stack \
   /usr/include/c++/13.1.1/deque \
   /usr/include/c++/13.1.1/bits/stl_deque.h \
   /usr/include/c++/13.1.1/bits/deque.tcc \
   /usr/include/c++/13.1.1/bits/stl_stack.h \
-  /home/stepan/Desktop/console_graphic/ClosedPolyhedron.h \
-  /home/stepan/Desktop/console_graphic/Object.h \
+  /home/stepan/Desktop/console_graphic/Geometry/ClosedPolyhedron.h \
   /home/stepan/Desktop/console_graphic/Scene.h \
   /home/stepan/Desktop/console_graphic/Light.h \
   /home/stepan/Desktop/console_graphic/Camera.h \
-  /home/stepan/Desktop/console_graphic/my_math.h \
   /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h \
-  /home/stepan/Desktop/console_graphic/Point.h \
   /home/stepan/Desktop/console_graphic/Light.h \
   /home/stepan/Desktop/console_graphic/objects/Tetraider.h \
   /home/stepan/Desktop/console_graphic/Object.h \
   /home/stepan/Desktop/console_graphic/objects/Cube.h \
+  /home/stepan/Desktop/console_graphic/objects/Toroid.h \
   /home/stepan/Desktop/console_graphic/Render.h
 
 
+/home/stepan/Desktop/console_graphic/objects/Toroid.h:
+
 /home/stepan/Desktop/console_graphic/light_srcs/LPoint.h:
 
-/home/stepan/Desktop/console_graphic/my_math.h:
-
 /home/stepan/Desktop/console_graphic/Camera.h:
-
-/home/stepan/Desktop/console_graphic/Object.h:
-
-/home/stepan/Desktop/console_graphic/ClosedPolyhedron.h:
 
 /usr/include/c++/13.1.1/bits/stl_stack.h:
 
@@ -338,13 +336,9 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/deque:
 
+/home/stepan/Desktop/console_graphic/Geometry/Vector.h:
+
 /usr/include/c++/13.1.1/utility:
-
-/usr/include/c++/13.1.1/bits/uniform_int_dist.h:
-
-/usr/include/c++/13.1.1/bits/stl_heap.h:
-
-/usr/include/c++/13.1.1/algorithm:
 
 /usr/include/c++/13.1.1/bits/stl_multimap.h:
 
@@ -360,15 +354,15 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/c++/13.1.1/bits/stl_multiset.h:
 
+/home/stepan/Desktop/console_graphic/Geometry/ClosedPolyhedron.h:
+
 /usr/include/c++/13.1.1/bits/stl_set.h:
 
 /usr/include/c++/13.1.1/bits/stl_tree.h:
 
 /usr/include/c++/13.1.1/set:
 
-/usr/include/c++/13.1.1/array:
-
-/home/stepan/Desktop/console_graphic/Triangle.h:
+/home/stepan/Desktop/console_graphic/Geometry/Section.h:
 
 /usr/include/bits/mathcalls-narrow.h:
 
@@ -380,7 +374,17 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/math.h:
 
-/home/stepan/Desktop/console_graphic/Point.h:
+/usr/include/c++/13.1.1/array:
+
+/usr/include/c++/13.1.1/bits/uniform_int_dist.h:
+
+/usr/include/c++/13.1.1/bits/stl_heap.h:
+
+/usr/include/c++/13.1.1/algorithm:
+
+/home/stepan/Desktop/console_graphic/Geometry/geometry.h:
+
+/home/stepan/Desktop/console_graphic/Object.h:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
 
@@ -486,6 +490,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/types/__mbstate_t.h:
 
+/home/stepan/Desktop/console_graphic/Geometry/my_math.h:
+
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/time.h:
@@ -515,8 +521,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/select.h:
 
 /usr/include/bits/libc-header-start.h:
-
-/home/stepan/Desktop/console_graphic/Section.h:
 
 /usr/lib/clang/15.0.7/include/stddef.h:
 
@@ -554,6 +558,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 
 /usr/include/bits/types/time_t.h:
 
+/home/stepan/Desktop/console_graphic/Geometry/Point.h:
+
 /usr/include/c++/13.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
 /usr/include/bits/struct_stat.h:
@@ -563,8 +569,6 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/posix_opt.h:
 
 /usr/include/c++/13.1.1/ostream:
-
-/home/stepan/Desktop/console_graphic/Polyhedron.h:
 
 /usr/include/c++/13.1.1/bits/memoryfwd.h:
 
@@ -651,6 +655,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/types/__FILE.h:
 
 /usr/include/c++/13.1.1/exception:
+
+/home/stepan/Desktop/console_graphic/Geometry/Triangle.h:
 
 /usr/include/bits/timex.h:
 
@@ -745,6 +751,8 @@ CMakeFiles/terminal_3d.dir/main.cpp.o: /home/stepan/Desktop/console_graphic/main
 /usr/include/bits/wordsize.h:
 
 /usr/include/stdio.h:
+
+/home/stepan/Desktop/console_graphic/Geometry/Polyhedron.h:
 
 /usr/include/c++/13.1.1/bits/move.h:
 

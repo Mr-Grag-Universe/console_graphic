@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "ClosedPolyhedron.h"
+#include "Geometry/geometry.h"
 
 class Object : public ClosedPolyhedron {
 public:

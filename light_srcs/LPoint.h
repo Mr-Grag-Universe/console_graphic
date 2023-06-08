@@ -1,7 +1,6 @@
 #ifndef LPOINT_CLASS_H
 #define LPOINT_CLASS_H
 
-#include "../Point.h"
 #include "../Light.h"
 
 class LPoint : public LightSrc {

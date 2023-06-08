@@ -11,7 +11,7 @@
 #include "light_srcs/LPoint.h"
 #include "objects/Tetraider.h"
 #include "objects/Cube.h"
-#include "my_math.h"
+#include "objects/Toroid.h"
 
 
 class Scene {
@@ -68,10 +68,6 @@ public:
                 // 2) считаем кол-во треугольников с + и - косинусом векторов
                 //      * приоритет в рамках одной фигуры отдаём ближайшей грани
                 // 3) ищем сумму / берём среднее от самой многочисленной группы
-
-                if (std::abs(point.z - 8) <= 0.000001) {
-                    std::cout << "hi\n";
-                }
 
                 // собираем освещённость
                 std::vector<std::pair<double, double>> l = {};
@@ -140,7 +136,7 @@ public:
                     }
                 }
 
-                pixel = in;
+                pixel = in / (1+std::pow(m, 0.7));
                 continue;
 
                 // считаем среднее

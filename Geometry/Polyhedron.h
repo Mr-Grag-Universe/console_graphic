@@ -36,6 +36,18 @@ public:
             e.insert(E.begin(), E.end());
         }
     }
+    Polyhedron(std::vector<Triangle> ts) {
+        for (auto t : ts) {
+            f.insert(t);
+            std::vector<point_ptr> V = t.get_v();
+            for (auto el : V)
+                v.insert(el);
+            std::vector<Section> E = t.get_e();
+            for (auto el : E)
+                e.insert(el);
+            e.insert(E.begin(), E.end());
+        }
+    }
 
     void add_point(const point_ptr p) {
         v.insert(p);

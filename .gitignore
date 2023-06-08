@@ -2,3 +2,7 @@
 /Vector.h
 build/
 build
+build/terminal_3d
+build/CMakeFiles/terminal_3d.dir/compiler_depend.internal
+.gitignore
+.gitignore
