@@ -2,9 +2,9 @@
 #include <iomanip>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/ioctl.h>
+// #include <sys/ioctl.h>
 #include <fcntl.h>
-#include <unistd.h>
+// #include <unistd.h>
 #include <stdio.h>
 #include <thread>
 #include <memory>
@@ -35,8 +35,8 @@ int main() {
     // printf("111");
     // return 0;
 
-    struct winsize w;
-    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    // struct winsize w;
+    // ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 	
     std::vector<point_ptr> points = {
         std::make_shared<Point>(Point(0,0,0)),
