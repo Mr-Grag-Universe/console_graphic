@@ -27,7 +27,7 @@ public:
             circle[i] = std::make_shared<Point>(Point({R+r*std::cos(betta*i), 0, r*std::sin(betta*i)}));
         }
         for (size_t i = 0; i < n; ++i) {
-            for (size_t j = 0; j < n; ++j) {
+            for (size_t j = 0; j < k; ++j) {
                 Point p = *(circle[j]);
                 double x = p.x * std::cos(alpha*i) - p.y * std::sin(alpha*i);
                 double y = p.x * std::sin(alpha*i) + p.y * std::cos(alpha*i);

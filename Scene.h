@@ -76,14 +76,16 @@ public:
                     double m = std::pow(10, 20);
                     Triangle t = Triangle({std::make_shared<Point>(Point({0, 0, 0})), std::make_shared<Point>(Point({0, 0, 1})), std::make_shared<Point>(Point({0, 1, 0}))});
                     for (auto & f : o->get_faces()) {
+                        Point cross;
                         bool err;
                         try {
+                            cross = f.cross_point(point, p_d);
                             err = f.cross_triangle(point, p_d);
                         } catch(...) {
                             continue;
                         }
+                        // bool err = f.on_triangle(cross);
                         if (err) {
-                            Point cross = f.cross_point(point, p_d);
                             double d = (cross - point).r();
                             if (d < m) {
                                 t = f;
